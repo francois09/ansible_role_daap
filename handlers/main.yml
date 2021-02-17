@@ -1,0 +1,16 @@
+---
+# Daap handlers
+- name: Restart daap
+  service:
+    name: forked-daapd
+    state: restarted
+
+- name: Reload daap
+  service:
+    name: forked-daapd
+    state: reloaded
+
+- name: Rescan daap
+  uri:
+    url: http://localhost:{{daap__port}}/api/update
+    method: GET

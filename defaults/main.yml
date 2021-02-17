@@ -1,0 +1,22 @@
+---
+# Default do nothing
+daap__install: False
+daap__configure: False
+
+# defaults file for daap
+daap__default_packages:
+  - forked-daapd
+
+daap__uid: "daapd"
+daap__logfile: "/var/log/forked-daapd.log"
+daap__loglevel: "log"
+
+daap__friend_name: "My music server"
+daap__music_directories: []
+
+daap__music_password: ""
+daap__admin_password: ""
+
+daap__port: null
+daap__webport: null
+daap__mpd_port: null

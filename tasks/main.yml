@@ -1,0 +1,27 @@
+---
+- name: Daap install packages
+  apt:
+    name: "{{ daap__default_packages }}"
+    update_cache: yes
+    state: present
+  when: daap__install
+
+
+# Create config file
+- name: Create global config file
+  template:
+    src: forked_daapd_conf
+    dest: /etc/forked-daapd.conf
+  notify: Restart daap
+  when:
+    - daap__configure
+
+# TODO:
+# Can use a fake local directory in the list, to make a rescan or a
+# meta rescan just by touching the file...
+#
+# touch any.init-rescan on local file for rescan whole dirs
+# touch any.meta-rescan on local file for rescan metadatas
+
+...
+
