@@ -1,0 +1,4 @@
+2021-03-16  François TOURDE <fr-github@tourde.org>
+
+	* tasks/main.yml (Create rescan dir): Create a dir for rescan files
+	* templates/forked_daapd_conf (): Add rescan dir into directories
