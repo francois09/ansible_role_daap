@@ -16,6 +16,16 @@
   when:
     - daap__configure
 
+# Create rescan dir
+- name: Create rescan dir
+  file:
+    path: "{{ daap__trigger_dir }}"
+    state: directory
+  notify: Restart daap
+  when:
+    - daap__configure
+    - daap__trigger_dir is defined
+
 # TODO:
 # Can use a fake local directory in the list, to make a rescan or a
 # meta rescan just by touching the file...

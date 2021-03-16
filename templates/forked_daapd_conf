@@ -68,7 +68,7 @@ library {
 	password = "{{ daap__music_password }}"
 
 	# Directories to index
-	directories = { {% for d in daap__music_directories %}"{{ d }}"{% if not loop.last %}, {% endif %}{% endfor %} }
+	directories = { {% for d in daap__music_directories %}"{{ d }}"{% if not loop.last %}, {% endif %}{% endfor %}{% if daap__trigger_dir is defined %}, {{ daap__trigger_dir }}{% endif %} }
 
 	# Follow symlinks. Default: true.	
 #	follow_symlinks = true
